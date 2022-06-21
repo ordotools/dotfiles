@@ -24,6 +24,7 @@ SPACESHIP_GIT_STATUS_SHOW=true
 neofetch
 
 source ~/dotfiles/.zsh/alias.zsh
+source ~/dotfiles/.zsh/nnn.zsh
 source ~/dotfiles/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
