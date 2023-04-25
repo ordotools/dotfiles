@@ -1,1 +1,5 @@
 # dotfiles
+
+## How to install?
+
+
