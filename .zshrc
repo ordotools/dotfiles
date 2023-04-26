@@ -136,5 +136,5 @@ unset key
 # Command and Alias configuration
 # -------------------------------
 
-source ./.commands.sh
+source .commands.sh
 

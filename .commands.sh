@@ -6,3 +6,7 @@ function latex_styles_update() {
    echo "LaTeX styles have been updated"
    cd -
 }
+
+function sendit() {
+   git add . && git commit -m '$1' && git push
+}
