@@ -1,3 +1,7 @@
+
+# Syntax highlighting for man pages
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 parse_git_dirty() {
   git_status="$(git status 2> /dev/null)"
   # [[ "$git_status" =~ "Changes to be committed:" ]] && echo -n "%F{green}·%f"
