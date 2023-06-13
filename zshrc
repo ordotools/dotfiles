@@ -1,6 +1,7 @@
 
 # Syntax highlighting for man pages
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 parse_git_dirty() {
   git_status="$(git status 2> /dev/null)"
