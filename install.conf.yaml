@@ -8,10 +8,18 @@
     # ~/.vim: vim
     ~/.zshrc:
     ~/.gitconfig:
+    ~/.config/:
+        glob: true
+        create: true
+        force: true
+        path: config/*
+        relink: true
 
-# - create:
+- create:
 #     - ~/downloads
 #     - ~/.vim/undo-history
+    - ~./.config
+
 
 - shell:
     - 
