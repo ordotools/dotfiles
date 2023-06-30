@@ -1,4 +1,20 @@
 font:
+  # normal:
+  #   family: Operator Mono
+  #   style: Book
+
+  # bold:
+  #   family: Operator Mono
+  #   style: Bold
+
+  # italic:
+  #   family: Operator Mono
+  #   style: Italic
+
+  # bold_italic:
+  #   family: Operator Mono
+  #   style: Medium Italic
+
   normal:
     family: JetBrainsMono NF
     style: Regular
@@ -16,5 +32,3 @@ font:
     style: Medium Italic
 
   size: 15
-
-
