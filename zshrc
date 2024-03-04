@@ -8,8 +8,8 @@ parse_git_dirty() {
   git_status="$(git status 2> /dev/null)"
   [[ "$git_status" =~ "Your branch is ahead" ]] && echo -n "%F{orange}⇑%f"
   [[ "$git_status" =~ "Your branch is behind" ]] && echo -n "%F{orange}⇓%f"
-  [[ "$git_status" =~ "Changes to be committed:" ]] && echo -n "%F{green}·%f"
-  [[ "$git_status" =~ "Changes not staged for commit:" ]] && echo -n "%F{yellow}·%f"
+  [[ "$git_status" =~ "Changes to be committed:" ]] && echo -n "%F{green}%f"
+  [[ "$git_status" =~ "Changes not staged for commit:" ]] && echo -n "%F{yellow}%f"
   [[ "$git_status" =~ "Untracked files:" ]] && echo -n "%F{red}·%f"
 }
 
@@ -26,4 +26,7 @@ PS1='%F{254}%n%F{245} ↣ %F{153}%(5~|%-1~/⋯/%3~|%4~)%F{245}${vcs_info_msg_0_}
 alias l="exa -l -a --icons"
 alias nvim="~/nvim-macos/bin/nvim"
 alias nvimrc="cd ~/.config/nvim/ && nvim"
-alias dotfile="cd ~/.dotfiles/ && nvim"
+alias dotfiles="cd ~/.dotfiles/ && nvim"
+
+# github alias
+alias ga="git add ."
