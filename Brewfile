@@ -14,8 +14,6 @@ brew "boost"
 brew "fontconfig"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# Modern replacement for 'ls'
-brew "exa"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
@@ -38,8 +36,6 @@ brew "imagemagick"
 brew "jq"
 # X.509 and CMS library
 brew "libksba"
-# Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
 # Command-line Git information tool
 brew "onefetch"
 # Cryptography and SSL/TLS Toolkit
