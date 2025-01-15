@@ -9,6 +9,7 @@ alias nvim="~/nvim/bin/nvim"
 alias nvimrc="cd ~/.config/nvim/ && nvim"
 alias dotfiles="cd ~/.dotfiles/ && nvim"
 alias update_latex_files="cd ~/Library/texmf/tex/ && git pull && cd -"
+alias qemu="qemu-system-x86_64"
 
 # github alias
 alias ga="git add ."

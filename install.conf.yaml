@@ -19,12 +19,19 @@
 #     - ~/downloads
 #     - ~/.vim/undo-history
     - ~./.config
-# NOTE: these mgith not be in the right place...
     - /opt/homebrew/share/zsh-syntax-highlighting
     - /opt/homebrew/share/zsh-autosuggestions
 
 - shell:
     - 
       command: ./setup_homebrew.zsh
+      stdout: true
+      stderr: true
+    - 
+      command: ./setup_zsh.zsh
+      stdout: true
+      stderr: true
+    - 
+      command: ./setup_neovim.zsh
       stdout: true
       stderr: true
