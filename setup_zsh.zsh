@@ -8,5 +8,6 @@ brew install zsh-syntax-highlighting
 
 brew install httpie
 brew install bat
+brew install lsd
 
 # use the --no-quarantine for casks 

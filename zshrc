@@ -4,12 +4,14 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # alias l="exa -l -a --icons"
+alias ls="lsd -l"
 alias l="ls -a"
 alias nvim="~/nvim/bin/nvim"
 alias nvimrc="cd ~/.config/nvim/ && nvim"
 alias dotfiles="cd ~/.dotfiles/ && nvim"
 alias update_latex_files="cd ~/Library/texmf/tex/ && git pull && cd -"
 alias qemu="qemu-system-x86_64"
+
 
 # github alias
 alias ga="git add ."
@@ -38,3 +40,7 @@ setopt APPEND_HISTORY        # append to history file (Default)
 setopt HIST_NO_STORE         # Don't store history commands
 setopt HIST_REDUCE_BLANKS    # Remove superfluous blanks from each command line being added to the history.
 export PATH="$HOME/nvim/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

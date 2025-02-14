@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# Function to check if a command exists
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Function to print error messages in red
+error() {
+    echo -e "\033[31mError: $1\033[0m"
+    exit 1
+}
+
+# Function to print debug messages in blue
+debug() {
+    echo -e "\033[34mDebug: $1\033[0m"
+}
+
+# Check for required commands
+command_exists "curl" || error "curl is not installed"
+command_exists "tar" || error "tar is not installed"
+command_exists "xattr" || error "xattr is not installed"
+
+# Create a temporary directory
+TMP_DIR=$(mktemp -d)
+debug "Created temporary directory: $TMP_DIR"
+cd "$TMP_DIR" || error "Failed to create temporary directory"
+
+echo "🔍 Checking for existing Neovim installation..."
+# Remove existing nvim directory if it exists
+[ -d "$HOME/nvim" ] && {
+    debug "Removing existing nvim directory"
+    rm -rf "$HOME/nvim"
+}
+
+echo "⬇️  Downloading latest Neovim release..."
+# Download the ARM64 version for macOS
+DOWNLOAD_URL="https://github.com/neovim/neovim/releases/download/stable/nvim-macos-arm64.tar.gz"
+debug "Downloading from: $DOWNLOAD_URL"
+
+curl -L "$DOWNLOAD_URL" -o nvim-macos-arm64.tar.gz || error "Failed to download Neovim"
+
+# Check if the download was successful and file exists
+[ -f "nvim-macos-arm64.tar.gz" ] || error "Download file not found"
+debug "Download size: $(ls -lh nvim-macos-arm64.tar.gz | awk '{print $5}')"
+
+echo "🔧 Removing quarantine attribute..."
+xattr -c ./nvim-macos-arm64.tar.gz || error "Failed to remove quarantine attribute"
+
+echo "📦 Extracting Neovim..."
+# Try extracting with verbose output
+tar xzvf nvim-macos-arm64.tar.gz || error "Failed to extract archive"
+
+# Check if extraction was successful
+[ -d "nvim-macos-arm64" ] || error "Expected directory 'nvim-macos-arm64' not found after extraction"
+
+# Rename and move to home directory
+mv nvim-macos-arm64 nvim || error "Failed to rename directory"
+mv nvim "$HOME/" || error "Failed to move Neovim to home directory"
+
+echo "🔧 Setting up Neovim..."
+# Add Neovim to PATH if not already present
+NVIM_PATH="export PATH=\"\$HOME/nvim/bin:\$PATH\""
+if ! grep -q "$NVIM_PATH" "$HOME/.zshrc" 2>/dev/null && ! grep -q "$NVIM_PATH" "$HOME/.bash_profile" 2>/dev/null; then
+    if [ -f "$HOME/.zshrc" ]; then
+        echo "$NVIM_PATH" >> "$HOME/.zshrc"
+        debug "Added Neovim to PATH in .zshrc"
+    else
+        echo "$NVIM_PATH" >> "$HOME/.bash_profile"
+        debug "Added Neovim to PATH in .bash_profile"
+    fi
+    echo "Added Neovim to PATH"
+fi
+
+# Clean up
+cd "$HOME" || exit
+rm -rf "$TMP_DIR"
+
+echo "✨ Neovim has been successfully updated!"
+echo "Please restart your terminal or run: source ~/.zshrc (or ~/.bash_profile)"
