@@ -3,6 +3,9 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 autoload -U promptinit; promptinit
 prompt pure
 
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # alias l="exa -l -a --icons"
 alias ls="lsd -l"
 alias l="ls -a"
