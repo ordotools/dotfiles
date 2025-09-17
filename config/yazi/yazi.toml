@@ -1,0 +1,7 @@
+[manager]
+show_hidden = true
+
+[preview]
+wrap = true
+max_width = 120
+max_height = 60

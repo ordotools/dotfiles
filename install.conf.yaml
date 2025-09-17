@@ -15,6 +15,18 @@
         path: config/*
         relink: true
 
+- link:
+    ~/.config/ghostty:
+      path: config/ghostty
+      create: true
+      if: '[[ "$(uname)" == "Darwin" ]]'
+
+- link:
+    ~/.config/yazi:
+      path: config/yazi
+      create: true
+      if: '[[ "$(uname)" == "Darwin" ]]'
+
 - create:
 #     - ~/downloads
 #     - ~/.vim/undo-history
