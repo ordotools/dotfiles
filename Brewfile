@@ -1,3 +1,10 @@
+cask "ghostty"
+brew "yazi"
+brew "poppler"      # pdf -> image thumbnails
+brew "ghostscript"  # extra pdf support
+brew "chafa"        # fallback image->ANSI (not needed for kitty graphics, but handy)
+brew "imagemagick"  # general conversions
+cask "font-jetbrains-mono-nerd-font"
 tap "1password/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
