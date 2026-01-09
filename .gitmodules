@@ -5,3 +5,6 @@
 [submodule "config/ghostty/shaders-src"]
 	path = config/ghostty/shaders-src
 	url = https://github.com/thijskok/ghostty-shaders
+[submodule "config/ghostty/ghostty-shaders"]
+	path = config/ghostty/ghostty-shaders
+	url = https://github.com/hackr-sh/ghostty-shaders.git

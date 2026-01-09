@@ -5,7 +5,6 @@ brew "ghostscript"  # extra pdf support
 brew "chafa"        # fallback image->ANSI (not needed for kitty graphics, but handy)
 brew "imagemagick"  # general conversions
 cask "font-jetbrains-mono-nerd-font"
-tap "1password/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -21,22 +20,14 @@ brew "boost"
 brew "fontconfig"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Framework for layout and rendering of i18n text
 brew "pango"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
-# Command-line outline and bitmap font editor/converter
-brew "fontforge"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Fast, simple fuzzy text selector with an advanced scoring algorithm
 brew "fzy"
 # GitHub command-line tool
 brew "gh"
-# Configurable static site generator
-brew "hugo"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -63,16 +54,8 @@ brew "ski"
 brew "starship"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
-# Command-line helper for the 1Password password manager
-cask "1password-cli"
-# GPU-accelerated terminal emulator
-cask "alacritty"
 # 3D creation suite
 cask "blender"
-# Web browser focusing on privacy
-cask "brave-browser"
-# Reimagine your terminal
-cask "fig"
 # Web browser
 cask "firefox"
 # Developer targeted fonts with a high number of glyphs
@@ -81,8 +64,6 @@ cask "font-hack-nerd-font"
 cask "kitty"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
-# Open-source software for live streaming and screen recording
-cask "obs"
 # Control your tools with a few keystrokes
 cask "raycast"
 # PDF reader and note-taking application

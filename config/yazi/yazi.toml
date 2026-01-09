@@ -1,7 +1,9 @@
-[manager]
+[mgr]
 show_hidden = true
+ratio = [0, 1, 7]
 
 [preview]
-wrap = true
-max_width = 120
-max_height = 60
+method = "kitty"
+wrap = false
+max_width = 0
+max_height = 0
