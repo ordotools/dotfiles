@@ -55,4 +55,4 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
 # Added by Antigravity
 export PATH="/Users/frbarnes/.antigravity/antigravity/bin:$PATH"
-export GEMINI_API_KEY="AIzaSyDfyAtaYOmirJXhJP1iojhKWdAM4F4OFdw"
+export GEMINI_API_KEY=""
